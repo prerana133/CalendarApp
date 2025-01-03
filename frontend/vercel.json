@@ -2,7 +2,7 @@
     "rewrites": [
       {
         "source": "/(.*)",
-        "destination": "https://calendarapp-phi.vercel.app/"
+        "destination": ""
       }
     ]
   }
