@@ -90,7 +90,7 @@ exports.deleteCommunicationMethod = async (req, res) => {
 
 // --- Updated Controller Logic ---
 const Company = require("../Models/Company");
-const Communication = require("../models/Communication");
+const Communication = require("../Models/Communication");
 
 // Fetch Overdue and Due Communications
 exports.getOverdueAndDueCommunications = async (req, res) => {
