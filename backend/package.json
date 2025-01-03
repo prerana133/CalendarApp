@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "install-server": "npm install",
-    "start-server": "node app.js",
-    "install-client": "npm install",
-    "build-client": "npm run build",
-    "start-client": "npm run start"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",

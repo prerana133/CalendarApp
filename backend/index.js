@@ -18,11 +18,7 @@ app.get('/ping', (req, res) => {
 
 // Middleware
 app.use(bodyParser.json());
-app.use(cors({
-    origin : '*',
-    methods : ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true
-}));
+app.use(cors());
 
 // Routes
 app.use('/auth', AuthRouter);
@@ -39,7 +35,9 @@ app.use((err, req, res, next) => {
     });
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`Server is running on ${PORT}`);
-});
+// // Start server
+// app.listen(PORT, () => {
+//     console.log(`Server is running on ${PORT}`);
+// });
+
+module.exports = app;
