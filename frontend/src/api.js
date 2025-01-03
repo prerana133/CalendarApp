@@ -1,6 +1,6 @@
 // api.js
 
-const BASE_URL = "https://calendarapp-phi.vercel.app/";
+const BASE_URL = "https://calendarapp-phi.vercel.app";
 
 // Base fetch function
 const baseFetch = async (endpoint, options = {}) => {
@@ -13,13 +13,15 @@ const baseFetch = async (endpoint, options = {}) => {
   try {
     const response = await fetch(url, { ...options, headers });
     if (!response.ok) {
-      throw new Error(`Failed to fetch: ${response.statusText}`);
+      const errorBody = await response.text();
+      throw new Error(
+        `Failed to fetch: ${response.statusText} (Status: ${response.status}, Body: ${errorBody})`
+      );
     }
     if (response.status !== 204) {
-      // For non-204 responses, parse JSON
       return await response.json();
     }
-    return null; // For DELETE or similar requests with no body
+    return null;
   } catch (error) {
     console.error(`API error on ${url}:`, error);
     throw error;
