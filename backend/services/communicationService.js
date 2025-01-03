@@ -1,4 +1,4 @@
-const Communication = require("../models/Communication");
+const Communication = require("../Models/Communication");
 
 // Fetch all communication methods
 exports.getAllMethods = async () => {
