@@ -4,7 +4,7 @@ const BASE_URL = "https://calendarapp-phi.vercel.app";
 
 // Base fetch function
 const baseFetch = async (endpoint, options = {}) => {
-  const url = `${BASE_URL}${endpoint}`;
+  const url = `${BASE_URL+endpoint}`;
   const defaultHeaders = { "Content-Type": "application/json" };
   const headers = options.headers
     ? { ...defaultHeaders, ...options.headers }

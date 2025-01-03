@@ -9,7 +9,7 @@ require('dotenv').config();
 require('./Models/db');
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 // Health check route
 app.get('/ping', (req, res) => {
